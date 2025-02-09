@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We're Happy to see you. Please Login to Continue."
+            android:textSize="20sp"
+            android:textColor="#2b2b2b"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+        <EditText
+            android:id="@+id/usr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:textColor="#2b2b2b"
+            android:fontFamily="sans-serif"
+            android:minHeight="50dp"
+            android:maxLength="50"
+            android:layout_margin="10dp"
+            android:backgroundTint="#f8f8f8"
+            android:background="@drawable/textinp"
+            android:hint="Username"
+            android:textColorHint="#757474"
+            tools:ignore="Autofill,HardcodedText" />
+        <EditText
+            android:id="@+id/passw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:textColor="#2b2b2b"
+            android:fontFamily="sans-serif"
+            android:minHeight="50dp"
+            android:maxLength="50"
+            android:layout_margin="10dp"
+            android:backgroundTint="#f8f8f8"
+            android:background="@drawable/textinp"
+            android:hint="Password"
+            android:textColorHint="#757474"
+            tools:ignore="Autofill,HardcodedText" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/forgp"
+            android:text="Forgot Password?"
+            android:textSize="15sp"
+            android:textColor="#EBAC05"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <Button
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttonlog"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif"
+            android:maxLength="100"
+            android:minHeight="50dp"
+            android:text="Login"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an Account"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/regt"
+            android:text="Register"
+            android:textSize="15sp"
+            android:textColor="#EBAC05"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+    </LinearLayout>
+</ScrollView>
