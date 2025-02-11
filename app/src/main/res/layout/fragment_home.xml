@@ -1,55 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My Community"
                         android:textColor="#242424"
-                        android:textSize="30sp"
+                        android:textSize="26sp"
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="A Place for all your questions"
                         android:textColor="#242424"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:fontFamily="sans-serif"
                         tools:ignore="HardcodedText" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
-                    <ImageView
+
+                    <ImageButton
+                        android:id="@+id/dm"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/send"
                         android:layout_gravity="right"
+                        android:background="@drawable/send"
+                        android:backgroundTint="@color/send_button"
                         tools:ignore="ContentDescription,RtlHardcoded" />
                 </LinearLayout>
             </LinearLayout>
@@ -67,68 +79,88 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:paddingEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:paddingEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:paddingEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:paddingEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:paddingEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
                 </LinearLayout>
             </HorizontalScrollView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="10dp"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/prf"
                         android:layout_marginLeft="15dp"
                         tools:ignore="ContentDescription,RtlHardcoded" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="John Doe"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
                         tools:ignore="HardcodedText,RtlCompat"
                         android:layout_gravity="center_vertical"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
                 </LinearLayout>
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,15 +168,38 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/post"
                     tools:ignore="ContentDescription" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    tools:ignore="UselessLeaf">
+                    tools:ignore="UselessLeaf"
+                    android:padding="8dp">
+
                     <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        />
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/button_like"
+                        android:backgroundTint="#fc0303"
+                        android:textOff=""
+                        android:textOn=""
+                        android:layout_marginStart="10dp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/chat"
+                        app:tint="#242424"
+                        tools:ignore="ContentDescription"
+                        android:layout_marginStart="15dp"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/send"
+                        app:tint="#242424"
+                        tools:ignore="ContentDescription"
+                        android:layout_marginStart="15dp"/>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
