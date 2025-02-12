@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Call"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#2b2b2b"
+            android:fontFamily="sans-serif-black"
+            android:layout_gravity="center"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="UseCompoundDrawables">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/call_dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/post"
+            android:clipToOutline="true"
+            tools:ignore="ContentDescription,UnusedAttribute" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#2b2b2b"
+            android:fontFamily="sans-serif-black"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@drawable/call_bott_nav"
+        android:layout_margin="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/call_butt_1"
+            android:src="@drawable/option"
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_margin="2dp"/>
+        <ToggleButton
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/call_vol_1"
+            android:textOn=""
+            android:textOff=""
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="2dp"/>
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/call_butt_1"
+            android:src="@drawable/vidcallw"
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_margin="2dp"/>
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/call_butt_1"
+            android:src="@drawable/call_mic_1"
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="2dp"/>
+        <ImageView
+            android:id="@+id/hang"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/hang"
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+</LinearLayout>

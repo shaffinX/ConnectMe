@@ -30,122 +30,12 @@
         android:drawableRight="@drawable/search24"
         android:paddingEnd="10dp"
         tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml" />
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessLeaf"
-        android:paddingStart="10dp"
-        android:paddingEnd="15dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:id="@+id/clickbutto">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/prf"
-                    tools:ignore="ContentDescription" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="John Doe"
-                    android:textStyle="normal"
-                    android:textColor="#2b2b2b"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="30dp"
-                    android:textSize="20sp"
-                    tools:ignore="HardcodedText" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/photocamera"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-                </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/rv"
+        android:background="#ffffff">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/prf"
-                    tools:ignore="ContentDescription" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="John Doe"
-                    android:textStyle="normal"
-                    android:textColor="#2b2b2b"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="30dp"
-                    android:textSize="20sp"
-                    tools:ignore="HardcodedText" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/photocamera"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/prf"
-                    tools:ignore="ContentDescription" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="John Doe"
-                    android:textStyle="normal"
-                    android:textColor="#2b2b2b"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="30dp"
-                    android:textSize="20sp"
-                    tools:ignore="HardcodedText" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/photocamera"
-                        android:layout_gravity="end"
-                        tools:ignore="ContentDescription" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

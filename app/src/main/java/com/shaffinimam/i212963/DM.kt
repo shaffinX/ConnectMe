@@ -1,12 +1,13 @@
 package com.shaffinimam.i212963
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class DM : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +17,21 @@ class DM : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val butt = findViewById<LinearLayout>(R.id.clickbutto)
-        butt.setOnClickListener{
-            val intent = Intent(this,DM2::class.java)
-            startActivity(intent)
-        }
+
+
+        val rv = findViewById<RecyclerView>(R.id.rv)
+        val list = mutableListOf<Model_dm>()
+        list.add(Model_dm("John Doe"))
+        list.add(Model_dm("JOHN DOE"))
+        list.add(Model_dm("John Doe"))
+        list.add(Model_dm("JOHN DOE"))
+        list.add(Model_dm("John Doe"))
+        list.add(Model_dm("JOHN DOE"))
+        val adapter = Adapter_dm(this,list)
+        val la = LinearLayoutManager(this)
+        rv.layoutManager = la
+        rv.adapter = adapter
+
     }
     override fun onSupportNavigateUp(): Boolean {
         finish() // Close current activity
