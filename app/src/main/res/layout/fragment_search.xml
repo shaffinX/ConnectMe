@@ -3,14 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Search">
+    tools:context=".Search"
+    android:layout_marginTop="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Search"
-        android:textColor="#000000"
-        tools:ignore="HardcodedText" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="UselessParent">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/textinp"
+            android:hint="Search"
+            android:gravity="center_vertical"
+            android:textColor="#000"
+            android:textColorHint="#2b2b2b"
+            android:paddingStart="20dp"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/search24"
+            android:paddingEnd="10dp"
+            android:inputType="text"
+            tools:ignore="Autofill,HardcodedText,RtlHardcoded,TextFields,UseCompatTextViewDrawableXml" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Searches"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#E8AD05"
+            android:layout_marginTop="20dp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
 
 </FrameLayout>

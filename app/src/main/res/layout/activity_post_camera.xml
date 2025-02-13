@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PostCamera"
+    android:layout_marginTop="20dp"
+    android:background="#ffffff">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        app:navigationIcon="@drawable/arrowback"
+        app:title="John Doe"
+        app:titleTextColor="#000000">
+        <TextView
+            android:id="@+id/callpers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#E8AD05"
+            android:textSize="20sp"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:id="@+id/captureButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/photocamera"
+            android:background="@drawable/call_butt_1"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

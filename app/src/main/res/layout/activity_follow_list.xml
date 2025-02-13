@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FollowList">
+    tools:context=".FollowList"
+    android:background="#ffffff">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_marginTop="20dp"
@@ -22,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
+        app:tabTextColor="#000"
+        app:tabIndicatorColor="#E8AD05"
         app:tabMode="fixed"/>
 
     <FrameLayout

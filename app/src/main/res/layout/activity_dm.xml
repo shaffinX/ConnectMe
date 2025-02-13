@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".DM"
     android:orientation="vertical"
-    android:paddingTop="15dp"
+    android:layout_marginTop="15dp"
     android:background="#ffffff">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
