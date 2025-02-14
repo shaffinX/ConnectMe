@@ -18,8 +18,8 @@
         tools:context=".DM">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/prf"
             tools:ignore="ContentDescription" />
 
@@ -30,7 +30,7 @@
             android:layout_marginStart="30dp"
             android:id="@+id/name"
             android:textColor="#2b2b2b"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal"
             tools:ignore="HardcodedText" />
 
@@ -41,8 +41,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="end"
                 android:src="@drawable/chat"
                 tools:ignore="ContentDescription" />

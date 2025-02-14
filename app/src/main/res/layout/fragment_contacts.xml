@@ -22,7 +22,7 @@
                 android:textColor="#E8AD05"
                 android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
-                android:textSize="30sp"/>
+                android:textSize="25sp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -44,7 +44,7 @@
                 android:textColor="#E8AD05"
                 android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"/>
 

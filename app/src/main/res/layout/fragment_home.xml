@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:layout_marginTop="30dp"
     tools:context=".Home">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:ignore="UselessParent">
 
         <LinearLayout
@@ -19,8 +21,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp">
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:text="My Community"
                         android:textColor="#242424"
-                        android:textSize="26sp"
+                        android:textSize="20sp"
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />
@@ -43,7 +44,7 @@
                         android:layout_height="wrap_content"
                         android:text="A Place for all your questions"
                         android:textColor="#242424"
-                        android:textSize="18sp"
+                        android:textSize="15sp"
                         android:fontFamily="sans-serif"
                         tools:ignore="HardcodedText" />
 
@@ -57,8 +58,8 @@
 
                     <ImageButton
                         android:id="@+id/dm"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="right"
                         android:background="@drawable/send"
                         android:backgroundTint="@color/send_button"
@@ -77,55 +78,58 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/baseline_add_24"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/home_symbol_addstory"
+                        tools:ignore="ContentDescription" />
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/prf"
+                        tools:ignore="ContentDescription,RtlSymmetry" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="5dp"
                         android:src="@drawable/prf"
                         tools:ignore="ContentDescription,RtlSymmetry" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:paddingEnd="5dp"
-                        android:src="@drawable/prf"
-                        tools:ignore="ContentDescription,RtlSymmetry" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -155,10 +159,10 @@
                         android:text="John Doe"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,RtlCompat"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlCompat,RtlSymmetry"
                         android:layout_gravity="center_vertical"
-                        android:textAlignment="center" />
+                        android:paddingStart="40dp" />
                 </LinearLayout>
 
                 <ImageView
@@ -191,14 +195,14 @@
                         android:src="@drawable/chat"
                         app:tint="#242424"
                         tools:ignore="ContentDescription"
-                        android:layout_marginStart="15dp"/>
+                        android:layout_marginStart="20dp"/>
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/send"
                         app:tint="#242424"
                         tools:ignore="ContentDescription"
-                        android:layout_marginStart="15dp"/>
+                        android:layout_marginStart="20dp"/>
 
                 </LinearLayout>
             </LinearLayout>

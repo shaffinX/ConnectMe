@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Call"
     android:orientation="vertical"
+    android:layout_marginTop="30dp"
     android:background="#ffffff">
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="John Doe"
             android:textStyle="bold"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textColor="#2b2b2b"
             android:fontFamily="sans-serif-black"
             android:layout_gravity="center"
@@ -31,8 +32,8 @@
         android:layout_weight="1"
         tools:ignore="UseCompoundDrawables">
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:background="@drawable/call_dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:text="10:00"
             android:textStyle="bold"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textColor="#2b2b2b"
             android:fontFamily="sans-serif-black"
             android:layout_gravity="center"
@@ -87,12 +88,12 @@
             android:layout_gravity="center_vertical"
             android:padding="5dp"
             android:layout_margin="2dp"/>
-        <ImageView
+        <ToggleButton
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:background="@drawable/call_butt_1"
-            android:src="@drawable/call_mic_1"
-            tools:ignore="ContentDescription"
+            android:background="@drawable/call_mic_1"
+            android:textOn=""
+            android:textOff=""
             android:layout_gravity="center_vertical"
             android:layout_margin="2dp"/>
         <ImageView
