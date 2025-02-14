@@ -26,6 +26,7 @@ class PostCamera : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        previewView = findViewById(R.id.previewView)
         val captureButton: ImageButton = findViewById(R.id.captureButton)
 
         startCamera()

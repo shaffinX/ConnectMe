@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PostComplete"
+    android:background="@color/white"
+    android:layout_marginTop="30dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingEnd="20dp">
+        <ImageButton
+            android:id="@+id/closebutt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/close"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Post"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            tools:ignore="HardcodedText,InefficientWeight" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="380dp"
+                android:src="@drawable/post"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/textinp"
+                android:layout_marginTop="30dp"
+                android:inputType="text"
+                android:hint="Add a Caption ..."
+                android:textColor="#000"
+                android:textColorHint="#2d2d2d"
+                tools:ignore="Autofill,HardcodedText" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/buttonlog"
+                android:text="Share"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

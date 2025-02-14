@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 
 class Plus : Fragment() {
@@ -30,6 +31,11 @@ class Plus : Fragment() {
         val button = view.findViewById<ImageButton>(R.id.cambutton)
         button.setOnClickListener{
             val intent = Intent(requireContext(),PostCamera::class.java)
+            startActivity(intent)
+        }
+        val button2 = view.findViewById<TextView>(R.id.next)
+        button2.setOnClickListener{
+            val intent = Intent(requireContext(),PostComplete::class.java)
             startActivity(intent)
         }
     }
