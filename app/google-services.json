@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "183254395373",
+    "firebase_url": "https://connectme-b2b49-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "connectme-b2b49",
+    "storage_bucket": "connectme-b2b49.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183254395373:android:9f026fa1c55d85219d5fe4",
+        "android_client_info": {
+          "package_name": "com.shaffinimam.i212963"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkFz5zY4ELwEzpta3vfq6Mps7gO31AFJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
