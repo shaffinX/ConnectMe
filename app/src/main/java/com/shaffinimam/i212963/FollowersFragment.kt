@@ -26,6 +26,7 @@ class FollowersFragment : Fragment() {
         list.add(Model_Followers("JOHN DOE"))
         list.add(Model_Followers("John Doe"))
         list.add(Model_Followers("JOHN DOE"))
+        list.add(Model_Followers("Jane DOE"))
         val adapter = Adapter_Followers(requireContext(),list)
         val la = LinearLayoutManager(requireContext())
         rv.layoutManager = la
