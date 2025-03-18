@@ -54,6 +54,9 @@ dependencies {
     implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.espresso.intents)
     implementation(libs.firebase.database)
+    implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation("com.google.firebase:firebase-database:20.3.1")
+
     testImplementation(libs.junit)
     testImplementation(libs.androidx.rules)
     androidTestImplementation(libs.androidx.junit)
