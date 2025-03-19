@@ -1,159 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".EditProfile"
-    android:background="#ffffff"
-    android:layout_marginTop="30dp">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#ffffff"
-        app:navigationIcon="@drawable/arrowback"
-        app:title="John Doe"
-        app:titleTextColor="#000000" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        tools:ignore="UselessParent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="#2b2b2b"
-            android:paddingStart="15dp"
-            tools:ignore="HardcodedText,RtlSymmetry" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="15dp"
-            android:layout_gravity="bottom"
-            android:paddingEnd="15dp">
-            <TextView
-                android:id="@+id/doneButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Done"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
-                android:textColor="#E8AD05"
-                android:textSize="18sp"
-                android:layout_gravity="end" />
-        </LinearLayout>
-    </LinearLayout>
+    android:background="@color/white"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        tools:ignore="UseCompoundDrawables">
+        android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/profileImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/prf"
-            tools:ignore="ContentDescription" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Edit Profile"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Done"
+                android:textColor="@color/brown"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/placeholder_profile"
+                app:civ_border_color="@color/pink"
+                app:civ_border_width="0dp"
+                app:civ_circle_background_color="@color/pink" />
+
+            <ImageView
+                android:id="@+id/cameraIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_camera" />
+        </RelativeLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif"
-            android:text="John Doe"
-            android:textColor="#2d2d2d"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
-
-        <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/displayName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/textinp"
-            android:backgroundTint="#f8f8f8"
-            android:fontFamily="sans-serif"
-            android:hint="Name"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Name"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            android:text="Olivia Daniel"
+            android:textColor="@color/darkGray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Username"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Enter your username"
             android:inputType="text"
-            android:maxLength="50"
-            android:minHeight="50dp"
-            android:padding="10dp"
-            android:textColor="#2b2b2b"
-            android:textColorHint="#757474"
-            android:textSize="16sp"
-            tools:ignore="Autofill,HardcodedText" />
+            android:padding="16dp"
+            android:text="OliviaD"
+            android:textColor="@color/darkGray"
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/usernameEditText"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/textinp"
-            android:backgroundTint="#f8f8f8"
-            android:fontFamily="sans-serif"
-            android:hint="Username"
-            android:inputType="text"
-            android:maxLength="50"
-            android:minHeight="50dp"
-            android:padding="10dp"
-            android:textColor="#2b2b2b"
-            android:textColorHint="#757474"
-            android:textSize="16sp"
-            tools:ignore="Autofill,HardcodedText" />
+            android:layout_marginTop="24dp"
+            android:text="Contact Number"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/contactEditText"
+            android:id="@+id/editContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/textinp"
-            android:backgroundTint="#f8f8f8"
-            android:fontFamily="sans-serif"
-            android:hint="Contact no"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Enter your contact number"
             android:inputType="phone"
-            android:maxLength="50"
-            android:minHeight="50dp"
-            android:padding="10dp"
-            android:textColor="#2b2b2b"
-            android:textColorHint="#757474"
-            android:textSize="16sp"
-            tools:ignore="Autofill,HardcodedText" />
+            android:padding="16dp"
+            android:text="+42 7412 5443058"
+            android:textColor="@color/darkGray"
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/bioEditText"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/textinp"
-            android:backgroundTint="#f8f8f8"
-            android:fontFamily="sans-serif"
-            android:hint="Bio"
-            android:inputType="text"
-            android:maxLength="50"
-            android:minHeight="50dp"
-            android:padding="10dp"
-            android:textColor="#2b2b2b"
-            android:textColorHint="#757474"
-            android:textSize="16sp"
-            tools:ignore="Autofill,HardcodedText" />
+            android:layout_marginTop="24dp"
+            android:text="Bio"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edit_text"
+            android:gravity="top|start"
+            android:hint="Write something about yourself"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:padding="16dp"
+            android:text="Just an average 14 year old"
+            android:textColor="@color/darkGray"
+            android:textSize="16sp" />
+
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
