@@ -15,6 +15,7 @@ junitKtx = "1.2.1"
 espressoIntents = "3.6.1"
 googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
+firebaseAuthKtx = "23.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,7 @@ androidx-rules = { group = "androidx.test", name = "rules", version.ref = "rules
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 androidx-espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "espressoIntents" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

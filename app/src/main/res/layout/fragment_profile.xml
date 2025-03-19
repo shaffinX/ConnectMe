@@ -12,6 +12,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         tools:ignore="UselessParent">
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/logout"
+            android:id="@+id/logout"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

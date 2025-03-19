@@ -57,6 +57,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-database:20.3.1")
 
+
     testImplementation(libs.junit)
     testImplementation(libs.androidx.rules)
     androidTestImplementation(libs.androidx.junit)
