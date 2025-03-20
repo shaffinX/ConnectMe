@@ -58,13 +58,13 @@ class Register : AppCompatActivity() {
                 }
             }
     }
-    data class User(val id: String, val username: String, val email: String, val phone: String)
+    data class User(val id: String, val username: String, val email: String, val phone: String,val followers:String,val following:String)
     private fun saveToRDB(email:String,username: String,phone:String,id:String){
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val usersRef: DatabaseReference = database.getReference("users/") // Root node "users"
 
         // Create a user object
-        val user = User(id, username, email,phone)
+        val user = User(id, username, email,phone,"0","0")
 
         // Save user data under the userId node
         usersRef.child(id).setValue(user)

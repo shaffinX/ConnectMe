@@ -54,14 +54,15 @@
            android:paddingStart="20dp"
            android:paddingEnd="20dp"
            tools:ignore="UseCompoundDrawables">
-           <ImageView
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/prfpic"
                android:layout_width="150dp"
                android:layout_height="150dp"
                android:src="@drawable/prf"
-               android:layout_marginTop="15dp"
                android:layout_gravity="center"
-               tools:ignore="ContentDescription" />
+               android:layout_marginTop="50dp"/>
            <TextView
+               android:id="@+id/usrname"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="John Doe"
@@ -72,6 +73,7 @@
                android:layout_gravity="center"
                tools:ignore="HardcodedText" />
            <TextView
+               android:id="@+id/biotext"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="two bananas for a pound, three bananas for a euro"
@@ -93,7 +95,7 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="7"
+                   android:text="0"
                    android:fontFamily="sans-serif-black"
                    android:textStyle="bold"
                    android:textSize="25sp"
@@ -102,6 +104,7 @@
                    android:gravity="start"
                    tools:ignore="HardcodedText" />
                <TextView
+                   android:id="@+id/txtfols"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="410"
@@ -113,6 +116,7 @@
                    android:gravity="center"
                    tools:ignore="HardcodedText" />
                <TextView
+                   android:id="@+id/txtfolg"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="387"
