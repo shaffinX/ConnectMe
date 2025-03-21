@@ -45,15 +45,44 @@
             android:visibility="gone"
             android:scaleType="fitCenter"
             android:background="@android:color/black"/>
+
+        <!-- Capture Button in Center -->
+
+        <ImageButton
+            android:id="@+id/squareView"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toLeftOf="@id/captureButton"
+            android:background="@drawable/gallery_icon" />
+
         <ImageButton
             android:id="@+id/captureButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/photocamera"
+            android:src="@drawable/photocameraw"
             android:background="@drawable/call_butt_1"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+            android:padding="20dp"
             android:layout_marginBottom="30dp"/>
+
+        <!-- Circle View on the Right -->
+        <ImageButton
+            android:id="@+id/circleView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toRightOf="@id/captureButton"
+            android:background="@drawable/call_butt_1"
+            android:src="@drawable/sync"
+            android:scaleType="centerCrop"
+            android:padding="10dp"/>
     </RelativeLayout>
 
 </LinearLayout>
