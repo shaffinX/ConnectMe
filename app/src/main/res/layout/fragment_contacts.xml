@@ -3,60 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Contacts"
     android:layout_marginTop="30dp"
     android:background="@color/white">
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contacts"
+            android:textColor="#E8AD05"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contacts"
-                android:textColor="#E8AD05"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
-                android:textSize="25sp"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/textinp"
-                android:hint="Search for friends"
-                android:gravity="center_vertical"
-                android:textColor="#000"
-                android:textColorHint="#4a4a4a"
-                android:paddingStart="20dp"
-                android:layout_margin="10dp"
-                android:drawableRight="@drawable/search24"
-                android:paddingEnd="10dp"
-                android:inputType="text"
-                tools:ignore="Autofill,HardcodedText,RtlHardcoded,TextFields,UseCompatTextViewDrawableXml" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In Contacts"
-                android:textColor="#E8AD05"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
+            app:tabGravity="fill"
+            app:tabTextColor="#000"
+            app:tabIndicatorColor="#E8AD05"
+            app:tabMode="fixed"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff">
-
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
-    </ScrollView>
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
 
 </FrameLayout>
