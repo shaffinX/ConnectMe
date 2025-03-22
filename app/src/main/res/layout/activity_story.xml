@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Story"
+    android:layout_marginTop="30dp"
+    android:background="#ffffff">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        app:navigationIcon="@drawable/arrowback"
+        app:title="John Doe"
+        app:titleTextColor="#000000">
+        <TextView
+            android:id="@+id/callpers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#E8AD05"
+            android:textSize="20sp"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/capturedImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:scaleType="fitCenter"
+            android:background="@android:color/black"/>
+
+        <!-- Capture Button in Center -->
+
+        <ImageButton
+            android:id="@+id/squareView"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toLeftOf="@id/captureButton"
+            android:background="@drawable/gallery_icon" />
+
+        <ImageButton
+            android:id="@+id/captureButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/photocameraw"
+            android:background="@drawable/call_butt_1"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+            android:padding="20dp"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Circle View on the Right -->
+        <ImageButton
+            android:id="@+id/circleView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toRightOf="@id/captureButton"
+            android:background="@drawable/call_butt_1"
+            android:src="@drawable/sync"
+            android:scaleType="centerCrop"
+            android:padding="10dp"/>
+    </RelativeLayout>
+
+</LinearLayout>
