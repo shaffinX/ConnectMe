@@ -8,12 +8,14 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -83,10 +85,27 @@ class PostCamera : AppCompatActivity() {
     }
 
     private fun requestPermissions() {
+        val permissionsNeeded = mutableListOf<String>()
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.CAMERA)
+        }
+
+        // For Android 13+ (API level 33+), we need READ_MEDIA_IMAGES instead of READ_EXTERNAL_STORAGE
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED) {
+                permissionsNeeded.add(Manifest.permission.READ_MEDIA_IMAGES)
+            }
+        } else {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                permissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        }
+
+        if (permissionsNeeded.isNotEmpty()) {
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE),
+                permissionsNeeded.toTypedArray(),
                 REQUEST_CAMERA_PERMISSION
             )
         } else {
@@ -96,10 +115,15 @@ class PostCamera : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if ((requestCode == REQUEST_CAMERA_PERMISSION || requestCode == REQUEST_GALLERY_PERMISSION)
-            && grantResults.isNotEmpty()
-            && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            startCamera()
+        if (requestCode == REQUEST_CAMERA_PERMISSION && grantResults.isNotEmpty()) {
+            val allGranted = grantResults.all { it == PackageManager.PERMISSION_GRANTED }
+            if (allGranted) {
+                startCamera()
+            } else {
+                Toast.makeText(this, "Permissions required to use the camera and access gallery", Toast.LENGTH_LONG).show()
+            }
+        } else if (requestCode == REQUEST_GALLERY_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            launchGalleryIntent()
         } else {
             Log.e("CameraX", "Permission denied")
         }
@@ -169,20 +193,42 @@ class PostCamera : AppCompatActivity() {
     }
 
     private fun openGallery() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                REQUEST_GALLERY_PERMISSION
-            )
+        // Check for the appropriate permission based on Android version
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.READ_MEDIA_IMAGES
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.READ_MEDIA_IMAGES),
+                    REQUEST_GALLERY_PERMISSION
+                )
+            } else {
+                launchGalleryIntent()
+            }
         } else {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                    REQUEST_GALLERY_PERMISSION
+                )
+            } else {
+                launchGalleryIntent()
+            }
         }
+    }
+
+    private fun launchGalleryIntent() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        intent.type = "image/*"
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -193,11 +239,12 @@ class PostCamera : AppCompatActivity() {
                 try {
                     // Store the URI in the companion object
                     tempImageUri = selectedImageUri
-                    // Navigate to PostComplete (without passing the image data)
+                    // Navigate to PostComplete
                     navigateToPostComplete()
                     Log.d("PostCamera", "Gallery Image Selected: $selectedImageUri")
                 } catch (e: Exception) {
                     Log.e("PostCamera", "Error processing gallery image: ${e.message}", e)
+                    Toast.makeText(this, "Error processing selected image", Toast.LENGTH_SHORT).show()
                 }
             }
         }

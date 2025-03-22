@@ -60,10 +60,12 @@ class PostComplete : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e("PostComplete", "Error loading image: ${e.message}", e)
                 Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show()
+                finish() // Close activity if image can't be loaded
             }
         } else {
             Log.e("PostComplete", "No image URI received")
             Toast.makeText(this, "No image received", Toast.LENGTH_SHORT).show()
+            finish() // Close activity if no image URI is received
         }
 
         closeButton.setOnClickListener {
@@ -134,12 +136,20 @@ class PostComplete : AppCompatActivity() {
         val caption = captionInput.text.toString().trim()
         val dateCreated = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
 
+        // Create likes and comments empty initializers
+        val likesInitializer = mapOf<String, Boolean>() // Will store user IDs who liked the post
+        val commentsInitializer = mapOf<String, Any>() // Will store comment data
+
         val postData = mapOf(
             "postId" to postId,
             "userId" to userId,
             "image" to base64Image,
             "caption" to caption,
-            "dateCreated" to dateCreated
+            "dateCreated" to dateCreated,
+            "likes" to likesInitializer, // Initialize empty likes map
+            "likesCount" to 0, // Initialize likes count as 0
+            "comments" to commentsInitializer, // Initialize empty comments map
+            "commentsCount" to 0 // Initialize comments count as 0
         )
 
         database.child(userId).child(postId).setValue(postData)
