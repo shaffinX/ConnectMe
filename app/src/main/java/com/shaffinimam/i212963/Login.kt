@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.database.FirebaseDatabase
 
 class Login : AppCompatActivity() {
 
@@ -61,6 +62,18 @@ class Login : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                        val userId = auth.currentUser?.uid // Get user UID
+
+                        if (userId != null) {
+                            val databaseRef = FirebaseDatabase.getInstance().getReference("users").child(userId)
+
+                            databaseRef.get().addOnSuccessListener { snapshot ->
+                                if (snapshot.exists()) {
+                                    val username = snapshot.child("username").value.toString()
+                                    SharedPrefManager.saveUsername(this, username) // Save username in SharedPreferences
+                                }
+                            }
+                        }
                         val intent = Intent(this, Navigation::class.java)
                         startActivity(intent)
                         finish() // Close the login activity
