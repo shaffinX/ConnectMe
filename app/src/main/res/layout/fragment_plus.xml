@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:ignore="UselessParent">
+
+        <!-- Header with title and Next button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Post"
+                android:text="Create"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-black"
                 android:textColor="#000"
@@ -39,19 +41,61 @@
                 android:layout_marginEnd="20dp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
+
+        <!-- Post/Story options tab -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
+
+            <TextView
+                android:id="@+id/tab_post"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Post"
+                android:textStyle="bold"
+                android:textColor="#E8AD05"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/tab_selected"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tab_story"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Story"
+                android:textStyle="bold"
+                android:textColor="#888888"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/tab_unselected"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!-- Main content area with image preview -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp">
 
             <ImageView
+                android:id="@+id/preview_image"
                 android:layout_width="wrap_content"
                 android:layout_height="380dp"
                 android:src="@drawable/post"
                 tools:ignore="ContentDescription" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,9 +120,9 @@
                     android:layout_gravity="bottom"
                     tools:ignore="ContentDescription" />
             </LinearLayout>
-
         </LinearLayout>
 
+        <!-- Grid of recent images -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -160,9 +204,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/post"
                     tools:ignore="ContentDescription" />
-
             </GridLayout>
         </ScrollView>
     </LinearLayout>
-
 </FrameLayout>
