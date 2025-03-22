@@ -19,6 +19,25 @@
         android:text="User Name"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:paddingStart="10dp"
+        android:paddingStart="30dp"
         android:layout_gravity="center_vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_gravity="center_vertical">
+        <Button
+            android:id="@+id/folbutt"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:background="#EBAC05"
+            android:text="follow"
+            android:textColor="@color/white"
+            android:layout_marginEnd="10dp"/>
+    </LinearLayout>
+
+
+
 </LinearLayout>
