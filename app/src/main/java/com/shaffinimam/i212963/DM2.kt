@@ -29,6 +29,7 @@ class DM2 : AppCompatActivity() {
             startActivity(intent)
         }
     //Message System Implementation
+        //Media in Messages
 
     }
     override fun onSupportNavigateUp(): Boolean {
