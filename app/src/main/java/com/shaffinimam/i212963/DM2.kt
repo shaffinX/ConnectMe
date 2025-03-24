@@ -28,7 +28,7 @@ class DM2 : AppCompatActivity() {
             intent.putExtra("name",name)
             startActivity(intent)
         }
-
+    //Message System Implementation
 
     }
     override fun onSupportNavigateUp(): Boolean {
