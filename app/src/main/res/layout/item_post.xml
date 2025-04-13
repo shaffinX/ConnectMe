@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="15dp">
+
+    <!-- Header: Profile Picture and Username -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/prf"
+            android:layout_marginLeft="15dp"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,RtlCompat,RtlSymmetry"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="40dp" />
+    </LinearLayout>
+
+    <!-- Post Image -->
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/post"
+        tools:ignore="ContentDescription" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessLeaf"
+        android:padding="8dp">
+
+        <ToggleButton
+            android:id="@+id/btn_like"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_like"
+            android:backgroundTint="#fc0303"
+            android:textOff=""
+            android:textOn=""
+            android:layout_marginStart="10dp" />
+
+        <ImageView
+            android:id="@+id/btn_comment"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/chat"
+            app:tint="#242424"
+            tools:ignore="ContentDescription"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:id="@+id/btn_share"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/send"
+            app:tint="#242424"
+            tools:ignore="ContentDescription"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+    <!-- Like Count -->
+    <TextView
+        android:id="@+id/tv_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="0 likes"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <!-- Caption -->
+    <TextView
+        android:id="@+id/tv_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingBottom="5dp"
+        android:text="Caption text goes here..."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
+</LinearLayout>
