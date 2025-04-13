@@ -55,6 +55,7 @@ class Call : AppCompatActivity() {
         uid = intent.getStringExtra("uid") ?: ""
         channelName = intent.getStringExtra("channelName") ?: ""
         isCaller = intent.getBooleanExtra("isCaller", true)
+        val videoCallButton = findViewById<ImageView>(R.id.videoCallButton)
 
         findViewById<TextView>(R.id.name).text = name
 
@@ -72,16 +73,30 @@ class Call : AppCompatActivity() {
             }
         }
 
+
         initAgoraEngine()
         joinChannel()
+        videoCallButton.setOnClickListener {
+            val intent = Intent(this, Call::class.java)
+            intent.putExtra("channelName", channelName)
+            intent.putExtra("isCaller", true)
+            intent.putExtra("isVoiceCall", false)
+            startActivity(intent)
+            finish() // Optional: finish current activity if you're switching mode
+        }
     }
 
     private fun initAgoraEngine() {
         try {
             agoraEngine = RtcEngine.create(baseContext, appId, rtcEventHandler)
-            // Configure for audio call
             agoraEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION)
+
+            // Always enable audio
             agoraEngine.enableAudio()
+
+            // Conditionally enable video
+            agoraEngine.enableVideo()
+
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(this, "Error initializing Agora: ${e.message}", Toast.LENGTH_SHORT).show()
