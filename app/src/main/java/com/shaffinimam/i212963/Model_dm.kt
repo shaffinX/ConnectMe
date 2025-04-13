@@ -1,4 +1,6 @@
 package com.shaffinimam.i212963
-
-class Model_dm(val name:String) {
-}
+data class Model_dm(
+    val name: String = "",
+    val picture: String = "", // base64 string
+    val uid: String = ""
+)

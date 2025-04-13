@@ -32,6 +32,7 @@
         android:layout_weight="1"
         tools:ignore="UseCompoundDrawables">
         <ImageView
+            android:id="@+id/profile_img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:background="@drawable/call_dp"

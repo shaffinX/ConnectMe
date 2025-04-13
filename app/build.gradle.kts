@@ -59,6 +59,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-database:20.3.1")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation("io.agora.rtc:full-sdk:4.2.3")
 
 
     testImplementation(libs.junit)

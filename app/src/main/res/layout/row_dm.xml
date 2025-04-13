@@ -17,12 +17,11 @@
         android:paddingEnd="15dp"
         android:background="#ffffff"
         tools:context=".DM">
-
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_img"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/prf"
-                tools:ignore="ContentDescription" />
+                android:src="@drawable/ic_profile_placeholder"/>
 
             <TextView
                 android:layout_width="wrap_content"
