@@ -6,6 +6,7 @@ data class User(
     val email: String = "",
     val phone: String = "",
     val followers: String = "0",
-    val following: String = "0"
+    val following: String = "0",
+    var picture: String = ""
 )
 
